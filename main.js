@@ -1,4 +1,4 @@
-const URL = 'https://ci-swapi.herokapp.com/api/';
+const URL = 'https://ci-swapi.herokuapp.com/api/';
 
 function getData(type, data) {
   var xhr = new XMLHttpRequest();
