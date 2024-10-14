@@ -23,7 +23,7 @@ function generatePaginationButtons(next, prev) {
   } else if (next && !prev) {
      return `<button onclick="writeToDocument('${next}')">Next</button>`;
   } else if (!next && prev) {
-     return `<button onclick="writeToDocument('${prev}')">Previous</button>`;
+     return `<button onclick="writeToDocument('${prev}')">Previous</button>`.replace(/,/g,'');
   }
 }
 
