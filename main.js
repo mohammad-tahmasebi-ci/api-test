@@ -12,8 +12,14 @@ function getData(type, data) {
 }
 
 function writeToDocument(type) {
+  var elmnt = document.getElementById('data');
+  elmnt.innerHTML = '';
   getData(type, function(data) {
-    document.getElementById('data').innerHTML = data;
+    // console.log(data.dir);
+    data = data.results;
+    data.forEAch(function(item) {
+      elmnt.innerHTML += '<p>' + item.name + '</p>';
+    });
 });
 }
 
