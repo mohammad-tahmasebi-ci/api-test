@@ -1,9 +1,19 @@
-var xhr = new XMLHttpRequest();
+const URL = 'https://ci-swapi.herokapp.com/api/';
 
-xhr.onreadystatechange = function() {
-  if (this.readyState == 4 && this.status == 400) {
-    document.getElementById('data').innerHTML = this.responseText;
+function getData(type, data) {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', URL + type);
+  xhr.send();
+  xhr.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 400) {
+      cb(JSON.parse(this.responseText));
+    };
+  };
 }
-};
-xhr.open('GET', 'https://ci-swapi.herokuapp.com/api/');
-xhr.send();
+
+function writeToDocument(type) {
+  getData(type, function(data) {
+    document.getElementById('data').innerHTML = data;
+});
+}
+
