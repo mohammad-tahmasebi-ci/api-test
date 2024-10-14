@@ -1,6 +1,6 @@
 const URL = 'https://ci-swapi.herokuapp.com/api/';
 
-function getData(type, data) {
+function getData(type, cb) {
   var xhr = new XMLHttpRequest();
   xhr.open('GET', URL + type + '/');
   xhr.send();
