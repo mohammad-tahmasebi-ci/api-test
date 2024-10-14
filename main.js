@@ -17,7 +17,7 @@ function writeToDocument(type) {
   getData(type, function(data) {
     // console.log(data.dir);
     data = data.results;
-    data.forEAch(function(item) {
+    data.forEach(function(item) {
       elmnt.innerHTML += '<p>' + item.name + '</p>';
     });
 });
